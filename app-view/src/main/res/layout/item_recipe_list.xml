@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/recipe_card"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ingredient_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/recipe_rounded_image"
+        app:layout_constraintBottom_toBottomOf="@+id/recipe_card"
+        app:layout_constraintStart_toStartOf="@+id/recipe_card"
+        app:layout_constraintTop_toTopOf="@+id/recipe_card" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/text_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/ingredient_image"
+        app:layout_constraintLeft_toRightOf="@id/ingredient_image"
+        app:layout_constraintRight_toLeftOf="@id/ic_chevron_right"
+        app:layout_constraintTop_toTopOf="@id/ingredient_image">
+
+        <TextView
+            android:id="@+id/ingredient_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textSize="@dimen/text_body_medium"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ingredient" />
+
+        <TextView
+            android:id="@+id/ingredient_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#808080"
+            android:textSize="@dimen/text_body_medium"
+            app:layout_constraintStart_toStartOf="@id/ingredient_title"
+            app:layout_constraintTop_toBottomOf="@id/ingredient_title"
+            tools:text="Subtitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ic_chevron_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/chevron_right"
+        app:layout_constraintBottom_toBottomOf="@id/recipe_card"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintLeft_toLeftOf="@id/recipe_card"
+        app:layout_constraintRight_toRightOf="@id/recipe_card"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
